@@ -1,0 +1,26 @@
+services:
+  smarthealth-api:
+    build:
+      context: ./SmartHealthcare.API
+      dockerfile: Dockerfile
+
+    container_name: smarthealth-api
+
+    ports:
+      - "5231:8080"
+
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://+:8080
+
+      MongoDB__ConnectionString: ${MONGODB_CONNECTION_STRING}
+      MongoDB__DatabaseName: SmartHealthcare
+
+      MLService__BaseUrl: ${ML_SERVICE_URL}
+
+      Jwt__Key: ${JWT_KEY}
+      Jwt__Issuer: SmartHealthcare.API
+      Jwt__Audience: SmartHealthcare.Client
+      Jwt__ExpiryMinutes: 60
+
+    restart: unless-stopped
