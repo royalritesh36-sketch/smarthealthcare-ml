@@ -121,7 +121,7 @@ app.UseSwaggerUI();
 // Middleware
 // ==========================================
 
-app.UseHttpsRedirection();
+// app.UseHttpsRedirection();
 
 app.UseCors("FrontendPolicy");
 

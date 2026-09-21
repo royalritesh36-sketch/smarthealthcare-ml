@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://smarthealthcarebackend-dxf2huf0f5bua6da.centralindia-01.azurewebsites.net/swagger/index.html",
+  baseURL: "https://smarthealthcare-backend-wr09.onrender.com/",
   headers: {
     "Content-Type": "application/json",
   },
